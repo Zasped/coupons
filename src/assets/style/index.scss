@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.Sidebar {
+  padding: 0 10px;
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid black;
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    padding: .2em 0;
+  }
+
+  .menu_nav {
+    font-size: 18px;
+    overflow: hidden auto;
+    max-height: calc(100% - 56px);
+
+    li {
+      span, NavLink {
+        padding: .5em;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &:hover {
+          background: #d2cccc;
+        }
+      }
+    }
+
+    .submenu_nav {
+      margin: 0 0 .5em 1em;
+    }
+  }
+}
+
+.Coupons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 5;
+  padding: 10px 0;
+
+  .title {
+    font-weight: 500;
+  }
+
+  table {
+    border-collapse: collapse;
+
+    tr {
+      th {
+        min-width: 90px;
+        padding: .5em;
+        border: 1px solid black;
+      }
+
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: .5em;
+      }
+    }
+  }
+}
+
+.CouponsId {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 5;
+  padding: 10px 0;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      input {
+        font-size: 16px;
+      }
+
+      select {
+        width: 100%;
+        font-size: 16px;
+
+        option {
+        }
+      }
+    }
+
+    button{
+      font-size: 16px;
+    }
+  }
+}
