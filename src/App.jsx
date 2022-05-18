@@ -1,14 +1,17 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Sidebar from "./components/Sidebar";
 import Coupons from "./components/Coupons";
 import promo from "./JSON/promo.json";
 import CouponsId from "./components/CouponsId";
 
 function App() {
-
     const [sort, setSort] = useState('none');
-    const [coupons, setCoupons] = useState(JSON.parse(JSON.stringify(promo)).sort((prevEl, nextEl) => nextEl.active - prevEl.active));
+    const [coupons, setCoupons] = useState(promo);
     const [uid, setUid] = useState(null);
+
+    useEffect(() => {
+        setCoupons(coupons.sort((prevEl, nextEl) => nextEl.active - prevEl.active))
+    }, [coupons])
 
     return (
         <div className="App">
@@ -24,6 +27,8 @@ function App() {
                     coupons={coupons}
                     sort={sort}
                     setUid={setUid}
+                    uid={uid}
+                    setCoupons={setCoupons}
                 />
             }
         </div>

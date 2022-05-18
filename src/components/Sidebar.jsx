@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {memo} from 'react';
 
 const Sidebar = ({setSort, setUid}) => {
-
     return (
         <div className={'Sidebar'}>
             <h1 className={'title'}>Title</h1>
@@ -46,4 +45,4 @@ const Sidebar = ({setSort, setUid}) => {
     );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

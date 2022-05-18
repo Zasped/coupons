@@ -108,8 +108,11 @@
       }
     }
 
-    button{
-      font-size: 16px;
+    .btns{
+      display: flex;
+      button{
+        font-size: 16px;
+      }
     }
   }
 }

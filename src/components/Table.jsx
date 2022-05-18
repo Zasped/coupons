@@ -1,15 +1,21 @@
 import React from 'react';
 
-const Table = ({coup, setUid, title}) => {
+const Table = ({coup, setUid, title, setCoupons, coupons}) => {
+
+    const removeOnId = (id) => {
+        setCoupons(coupons.filter(el => el.id !== id))
+    }
+
     return (
         <table>
-            <caption>{title}</caption>
+            <caption className={'title'}>{title}</caption>
             <tbody>
             <tr>
                 <th>Id</th>
                 <th>Active</th>
                 <th>Summ</th>
                 <th>Code</th>
+                <th></th>
                 <th></th>
             </tr>
             {coup.map(el =>
@@ -22,7 +28,12 @@ const Table = ({coup, setUid, title}) => {
                         <button onClick={() => {
                             setUid(el.id)
                         }}>
-                            Перейти
+                            Изменить
+                        </button>
+                    </td>
+                    <td>
+                        <button onClick={() => removeOnId(el.id)}>
+                            Удалить
                         </button>
                     </td>
                 </tr>

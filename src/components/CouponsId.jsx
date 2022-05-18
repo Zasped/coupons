@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 const CouponsId = ({coup, uid, setUid, setCoupons}) => {
-
   const [idInput, setIdInput] = useState('');
   const [phoneInput, setPhoneInput] = useState('');
   const [nameInput, setNameInput] = useState('');
@@ -60,7 +59,10 @@ const CouponsId = ({coup, uid, setUid, setCoupons}) => {
           <input type="text" value={codeInput} placeholder={'code'}
                  onChange={(e) => setCodeInput(e.target.value)}/>
 
-          <button>Сохранить</button>
+          <div className="btns">
+            <button>Сохранить</button>
+            <button onClick={() => setUid(null)}>Отменить</button>
+          </div>
         </form>
 
       </div>
